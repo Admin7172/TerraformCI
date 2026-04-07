@@ -16,9 +16,9 @@ terraform {
     organization = "7172company"
     workspaces {
       name = "TerraformCl"
-    }  # закрываем workspaces
-  }    # закрываем cloud
-}      # закрываем terraform
+    } # закрываем workspaces
+  }   # закрываем cloud
+}     # закрываем terraform
 
 # ============================================================
 # Provider — credentials injected via Terraform Cloud
@@ -31,7 +31,7 @@ terraform {
 
 provider "azurerm" {
   features {}
-  
+
 }
 
 # ============================================================
