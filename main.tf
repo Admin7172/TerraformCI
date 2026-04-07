@@ -16,8 +16,9 @@ terraform {
     organization = "7172company"
     workspaces {
       name = "TerraformCl"
-  }
-}
+    }  # закрываем workspaces
+  }    # закрываем cloud
+}      # закрываем terraform
 
 # ============================================================
 # Provider — credentials injected via Terraform Cloud
