@@ -20,6 +20,12 @@ variable "vm_name" {
   default     = "vm-win-server"
 }
 
+variable "bastion_name" {
+  description = "Name of the Bastion Host"
+  type        = string
+  default     = "bastion-host"
+}
+
 variable "vm_size" {
   description = "Size/SKU of the VM"
   type        = string

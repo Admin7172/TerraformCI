@@ -88,9 +88,10 @@ resource "azurerm_network_security_group" "nsg" {
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "3389"
-    source_address_prefix      = azurem_subnet.subnet_2.address_prefixes
+    source_address_prefix      = azurem_subnet.subnet_2.address_prefixes[0]
     destination_address_prefix = "*"
   }
+
 
   security_rule {
     name                       = "Deny-RDP"
@@ -123,13 +124,12 @@ resource "azurerm_subnet_network_security_group_association" "nsg_assoc" {
 }
 
 
-
 # ============================================================
 # Public IP Address
 # ============================================================
 
 resource "azurerm_public_ip" "pip" {
-  name                = "pip-${azurerm_bastion_host.bastion.name}"
+  name                = "pip-${var.bastion_name}"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   allocation_method   = "Static"
