@@ -166,13 +166,13 @@ resource "azurerm_network_interface_security_group_association" "nic_nsg_assoc" 
 
 
 resource "azurerm_storage_account" "storage" {
-  name                     = "strg04072026"
-  resource_group_name      = azurerm_resource_group.rg.name
-  location                 = azurerm_resource_group.rg.location
-  account_tier             = "Standard"
-  account_replication_type = "GRS"
-  tags                     = var.tags
-
+  name                            = "strg04072026"
+  resource_group_name             = azurerm_resource_group.rg.name
+  location                        = azurerm_resource_group.rg.location
+  account_tier                    = "Standard"
+  account_replication_type        = "GRS"
+  tags                            = var.tags
+  allow_nested_items_to_be_public = false
 }
 # ============================================================
 # Bastion Host
@@ -225,4 +225,3 @@ resource "azurerm_windows_virtual_machine" "vm" {
 
   boot_diagnostics {}
 }
-
