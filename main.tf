@@ -175,7 +175,7 @@ resource "azurerm_storage_account" "storage" {
 
 }
 
-resource "azurerm_storage_account" "storage_2" {
+resource "azurerm_storage_account" "storage_1" {
   name                     = "strg04082026"
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
