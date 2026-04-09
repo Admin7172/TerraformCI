@@ -165,8 +165,18 @@ resource "azurerm_network_interface_security_group_association" "nic_nsg_assoc" 
 # ============================================================
 
 
-resource "azurerm_storage_account" "storage" {
+resource "azurerm_storage_account" "storage_1" {
   name                     = "strg04072026"
+  resource_group_name      = azurerm_resource_group.rg.name
+  location                 = azurerm_resource_group.rg.location
+  account_tier             = "Standard"
+  account_replication_type = "GRS"
+  tags                     = var.tags
+
+}
+
+resource "azurerm_storage_account" "storage_2" {
+  name                     = "strg04082026"
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
   account_tier             = "Standard"
