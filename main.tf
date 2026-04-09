@@ -175,7 +175,7 @@ resource "azurerm_storage_account" "storage" {
 
 }
 
-resource "azurerm_storage_account" "storage_1" {
+resource "azurerm_storage_account" "storage_3" {
   name                     = "strg04082026"
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
@@ -184,6 +184,7 @@ resource "azurerm_storage_account" "storage_1" {
   tags                     = var.tags
 
 }
+
 # ============================================================
 # Bastion Host
 # ============================================================
